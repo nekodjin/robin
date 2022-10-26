@@ -5,3 +5,5 @@ edition = "2021"
 authors = ["Avery R. <contact@nekodjin.org>"]
 
 [dependencies]
+intern = { version = "0.0.0", path = "../intern" }
+logos = "0.12.1"
