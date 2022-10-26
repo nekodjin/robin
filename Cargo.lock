@@ -3,5 +3,12 @@
 version = 3
 
 [[package]]
+name = "parser"
+version = "0.0.0"
+
+[[package]]
 name = "robin"
 version = "0.0.0"
+dependencies = [
+ "parser",
+]

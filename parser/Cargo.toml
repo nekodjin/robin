@@ -1,13 +1,7 @@
 [package]
-name = "robin"
+name = "parser"
 version = "0.0.0"
 edition = "2021"
 authors = ["Avery R. <contact@nekodjin.org>"]
 
 [dependencies]
-parser = { version = "0.0.0", path = "parser" }
-
-[workspace]
-members = [
-    "parser",
-]
