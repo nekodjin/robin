@@ -1,14 +1,9 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+use internment::Intern;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+pub type Id<T> = Intern<T>;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+pub type IString = Id<str>;
+
+pub fn intern(s: &str) -> IString {
+    IString::from(s)
 }
