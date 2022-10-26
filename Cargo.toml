@@ -10,4 +10,5 @@ parser = { version = "0.0.0", path = "parser" }
 [workspace]
 members = [
     "parser",
+    "intern",
 ]
