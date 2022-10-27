@@ -1,46 +1,39 @@
+use bigint::ubig;
 use intern::IString;
+use intern::Id;
 
-/// Represents a Robin module.
 pub struct Module {
-    /// The members of the module.
     pub members: Vec<Member>,
 }
 
-/// A member of a module.
 pub struct Member {
-    /// The accessibility modifier of that member.
-    pub modifier: Modifier,
-    /// The definition of that member.
+    pub modifier: Accessibility,
     pub definition: MemberDefinition,
 }
 
-/// An accessibility modifier.
-pub enum Modifier {
-    /// Visible to the superior module.
+pub enum Accessibility {
     Public,
-    /// Visible only to inferior modules.
     Private,
 }
 
-/// The definition of a module member.
+pub enum Mutability {
+    Immutable,
+    Mutable,
+}
+
 pub enum MemberDefinition {
     Function(Function),
     Module(Module),
 }
 
-/// A function definition
 pub struct Function {
-    /// The arguments of the function
     pub arguments: Vec<Argument>,
-    /// TODO
-    pub return_type: (),
-    /// The body of the function
+    pub return_type: Type,
     pub body: FunctionBody,
 }
 
 pub struct Argument {
-    /// TODO
-    pub type_annot: (),
+    pub type_annot: Type,
     pub identifier: IString,
 }
 
@@ -48,6 +41,26 @@ pub struct FunctionBody {
     pub statements: Vec<Statement>,
 }
 
+pub struct Type {
+    pub ident: IString,
+}
+
 pub enum Statement {
-    // TODO
+    LetBinding(LetBinding),
+    ExpressionStatement(Expression),
+}
+
+pub struct LetBinding {
+    pub ident: IString,
+    pub type_annot: Type,
+    pub mutability: Mutability,
+    pub value: Option<Expression>,
+}
+
+pub enum Expression {
+    Return(Box<Self>),
+    IntLiteral(Id<ubig>),
+    StringLiteral(IString),
+    AddressOf(Box<Self>),
+    Dereference(Box<Self>),
 }

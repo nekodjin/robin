@@ -1,0 +1,8 @@
+[package]
+name = "bigint"
+version = "0.0.0"
+edition = "2021"
+authors = ["Avery R. <contact@nekodjin.org>"]
+
+[dependencies]
+num-bigint = "0.4.3"
