@@ -1,2 +1,2 @@
 # Robin
-A C alternative.
+FUCK C!!! C ALTERNATIVE GOOD!!
