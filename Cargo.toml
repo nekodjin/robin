@@ -1,0 +1,10 @@
+[package]
+name = "robin"
+version = "0.0.0"
+edition = "2021"
+
+[dependencies]
+ariadne = "0.1.5"
+chumsky = "0.9.2"
+internment = "0.7.0"
+logos = "0.12.1"
